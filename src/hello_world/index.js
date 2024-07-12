@@ -1,6 +1,3 @@
-// En Node.js para importar un módulo necesitas de la palabra reservada require
-require('http');
-
 console.log('Hello world!');
 
 function sum (num1, num2) {
