@@ -1,6 +1,10 @@
 // En Node.js para importar un módulo necesitas de la palabra reservada require
 var http = require('http'); // el módulo http permite ejecutar JavaScript del lado del servidor
-var operations = require('./operations'); // importación total
+
+//var operations = require('./utils/operations'); // importación total
+
+// var { multiplication, addition } = require('./utils/operations'); // importación Parcial
+var { multiplication } = require('./utils/operations'); // importación Parcial
 
 var server = http.createServer(function(request, response){
     // console.log(request.url); // veamos que url está llamando
@@ -9,6 +13,10 @@ var server = http.createServer(function(request, response){
     response.end(); // cerramos nuestra respuesta
 });
 
-console.log('😃 addition', operations.addition(3, 10));
-console.log('😃 multiplication', operations.multiplication(3, 10));
+// console.log('😃 addition', operations.addition(3, 10)); // importación total
+// console.log('😃 multiplication', operations.multiplication(3, 10)); // importación total
+
+// console.log('😃 addition', addition(3, 10)); // importación Parcial (puedo agregar las que necesite)
+console.log('😃 multiplication', multiplication(3, 10)); // importación Parcial
+
 server.listen(5000);
